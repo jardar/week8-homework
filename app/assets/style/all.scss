@@ -1,1 +1,37 @@
-@import './layout/_index.scss';
+// @import "../../../node_modules/bootstrap/scss/functions";
+// @import "helpers/variables";
+
+// @import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// @import "helpers/utilities";
+
+// @import '../../../node_modules/bootstrap/scss/utilities/api'; // 再產生一次 utilities 
+
+// @import "base/base";
+// @import 'component/button';
+
+// @import 'layout/header.scss';
+
+// @import 'pages/index'
+
+@import "../../../node_modules/bootstrap/scss/functions";
+// @import "../../../node_modules/bootstrap/scss/variables";
+
+@import "helpers/variables";
+
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+@import "helpers/bs-utilities";
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+@import "base/base";
+@import "helpers/utility";
+@import 'component/button';
+
+@import 'layout/header.scss';
+
+@import 'pages/index';
+@import 'pages/market';

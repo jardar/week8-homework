@@ -1,0 +1,29 @@
+// border bottom 2px 
+.border-bottom-2 {
+    border-bottom: 2px solid $primary !important;
+    border-radius: 0 !important;
+
+}
+
+// 佔掉左右 gutter 空間
+.g-over-x {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: none;
+    /*  三角形  */
+    width: 0;
+    height: 0;
+    border-right: 16px solid #E6553B;
+    border-top: 16px solid transparent;
+}
+
+.icon-40 {
+    font-size: 40px;
+
+}

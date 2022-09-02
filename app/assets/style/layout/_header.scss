@@ -1,0 +1,97 @@
+// .logo {
+//     text-indent: 101%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     width: 6rem;
+//     height: 1.9375rem;
+
+//     &--primary {
+//         background-image: url('../images/DOYOGA-logo.png');
+
+//         @include media-breakpoint-up(md) {
+//             background-image: url('../images/DOYOGA-logo@2x.png');
+//         }
+//     }
+
+//     &--white {
+//         background-image: url('../images/DOYOGA.png');
+
+//         @include media-breakpoint-up(md) {
+//             background-image: url('../images/DOYOGA@2x.png');
+//         }
+//     }
+// }
+
+.navbar {
+    position: relative;
+
+    @include media-breakpoint-up(lg) {}
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 67px;
+        height: 1px;
+        background-color: $primary;
+
+    }
+
+    @include media-breakpoint-up(lg) {
+        &::after {
+            top: 108px;
+        }
+    }
+
+
+}
+
+.navbar-light .navbar-toggler:focus {
+    // border: none;
+    box-shadow: unset;
+}
+
+
+.navbar-toggler.collapsed {
+    .navbar-toggler-icon {
+        color: $primary;
+        background-image: url('../images/icon/bars-solid.svg');
+    }
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url('../images/icon/times-solid.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $primary;
+    font-size: 18px;
+    line-height: 1;
+
+}
+
+
+.header {
+    &__logo {
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 0;
+
+        // padding-right: 343px;
+        img {
+            height: 18px;
+
+            @include media-breakpoint-up(lg) {
+                height: unset;
+            }
+        }
+    }
+
+    &__search {
+        @include media-breakpoint-up(lg) {
+            width: 432px;
+        }
+    }
+}

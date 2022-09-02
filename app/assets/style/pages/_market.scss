@@ -1,0 +1,71 @@
+.art-rounded {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+.data {
+    font-family: $font-family-Squada-One;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $primary;
+}
+
+.positive {
+    color: $success;
+}
+
+.negative {
+    color: $danger;
+}
+
+.rd-triangle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    i {
+        color: white;
+        font-size: 10px;
+        position: absolute;
+        bottom: 2px;
+        right: 4px;
+
+    }
+
+    .triangle-32 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: block;
+        /*  三角形  */
+        width: 0;
+        height: 0;
+        border-right: 32px solid $primary;
+        border-top: 32px solid transparent;
+
+        &-inc {
+            border-right: 32px solid #E6553B;
+        }
+    }
+
+
+}
+
+
+
+.art-num {
+    width: 22px;
+    height: 32px;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.border-lg-end-0 {
+    @include media-breakpoint-up(lg) {
+        border-right: none !important;
+    }
+}

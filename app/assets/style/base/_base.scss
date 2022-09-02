@@ -1,0 +1,18 @@
+$font-family-Squada-One: 'Squada One';
+$font-family-Paytone-One: 'Paytone One';
+
+
+.font-squada {
+    font-family: $font-family-Squada-One;
+}
+
+.font-paytone {
+    font-family: $font-family-Paytone-One;
+}
+
+body {
+    font-family: 'Noto Sans TC';
+    // default font setting
+    font-size: 16px;
+    line-height: 1.5;
+}

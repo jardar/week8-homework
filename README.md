@@ -1,3 +1,43 @@
+主線任務
+Adobe XD [下載網址](https://xd.adobe.com/view/bcf8f7eb-689c-4850-b531-a78259c0cdd8-e9ab/grid/)(僅供有參加切版直播班授權同學)，
+[圖片下載](https://github.com/hexschool/2022-web-layout-training)連結
+備註：此設計稿採用 Bootstrap 5 格線系統間距設定
+
+
+
+繳交內容
+您的 Discord 名稱
+您的作業等級，請見下方等級表，例如 LV1
+作業網址：請提供 GitHub Pages 、Github Repo 連結提交作業，以方便助教與講師檢視
+訓練菜單：請到此*連結*挑選 2~3 個訓練菜單，並回報您增加哪些技能的熟練度。
+
+
+作業等級表
+LV1：任選兩頁含 RWD
+LV2(80、100%獎品門檻)：至少做兩頁含 RWD，其中一頁必須為首頁
+LV3：做三頁 RWD 頁面（其中一個頁面要做首頁，且三個頁面都需要包含效果）
+LV4：全部頁面與效果都做
+
+
+想更多練習版型可看這裡，僅提供授權練習與面試作品，但不進行作業批改
+[大型寵物服務網](https://xd.adobe.com/view/2c355bc0-1368-4995-b20d-9882992c75b0-7966/screen/69b72d39-0e8e-4849-96a2-617108c70de1/)
+[大型訂房網](https://xd.adobe.com/view/0cf6ec93-07a3-492f-58f2-9767ba1cfdfb-7ac7/)
+[瑜珈](https://xd.adobe.com/view/ddcefee3-3028-48a2-8840-4d3ba00e8807-889d/)
+權益說明：若想提交此這三份作業其中之一，來取代 NFT 藝術家交易平台版型可以，任務會直接審核通過，但無法提供助教批改，還煩請留意。
+
+
+
+作業地雷
+使用 Bootstrap 需要透過 _variables.scss 來修改主色等設定
+Tailwind 作業：@apply 僅適用於製作表單元素和按鈕
+頁數需以實際網站頁數計算
+需至少完成 Lv1 作業需求
+伸縮時不可以出現 x 軸與跑版的狀況
+需使用線上圖示
+作業須符合此[作業規範](https://hackmd.io/XbKPYiE9Ru6G0sAfB5PBJw)
+
+
+
 # 網頁切版直播班 Gulp 範例 - 加入 Bootstrap 版本
 
 > 使用該專案 Gulp 時，就可以不用使用其他編譯工具編譯 SCSS 或是 JavaScript 囉。

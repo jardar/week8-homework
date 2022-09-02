@@ -1,62 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%- title %></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/style/bootstrap.css">
-    <link rel="stylesheet" href="./assets/style/all.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <%- title %>
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Paytone+One&family=Squada+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- <link rel="stylesheet" href="./assets/style/bootstrap.css"> -->
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-gray-f0 py-4 py-lg-0">
+
+    <div class="container">
+
+      <a class="header__logo navbar-brand" href="index.html">
+        <img src="assets/images/logo.svg" alt="NFT 交易平台">
+      </a>
+
+
+      <form
+        class="header__search d-flex justify-content-end align-items-center px-lg-12 py-lg-8 border-start border-end border-gray-f0 border-lg-primary  ms-auto ms-lg-auto">
+        <input class="form-control border-0 py-2 me-6 d-none d-lg-block" type="search" placeholder="搜尋作品名稱、藝術家名稱"
+          aria-label="Search">
+        <a class="fs-0 text-decoration-none" href="#">
+          <i class="fas fa-search fs-6 fs-lg-4"></i>
+        </a>
+      </form>
+
+      <button class="navbar-toggler border-0 py-0 fs-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+        </span>
+      </button>
+
+
+      <div class="collapse navbar-collapse justify-content-lg-end flex-lg-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item border-bottom  border-primary border-lg-gray-f0 text-center">
+            <a class="nav-link fs-6 fw-bold text-nowrap py-6 px-lg-12 py-lg-10" href="#">探索</a>
+          </li>
+          <li class="nav-item border-start border-gray-f0 border-lg-primary text-center">
+            <a class="nav-link fs-6 fw-bold text-nowrap py-6 px-lg-12 py-lg-10" href="#">市值</a>
+          </li>
+          <li class="nav-item border-start border-gray-f0 border-lg-primary text-center mb-6 mb-lg-0">
+            <a class="nav-link ps-lg-12 py-lg-10 fs-0 d-none d-lg-block" href="#">
+              <i class="fas fa-wallet  fs-4"></i>
+            </a>
+            <a href="#" class="btn btn-danger py-3 fs-6 border-primary text-white w-100 d-lg-none">連結錢包</a>
+          </li>
+        </ul>
+
       </div>
-    </nav>
 
+    </div>
+
+  </nav>
+
+
+
+  <main>
     <%- contents %>
+  </main>
 
-    <footer class="footer">
-      footer
-    </footer>
+  <footer class="footer py-6 border-top border-4 border-primary text-center bg-gray-f0">
+    © ART NFT. All Rights Reserved
+  </footer>
 
-    <script src="./assets/js/vendors.js"></script>
-    <script src="./assets/js/all.js"></script>
-  </body>
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+</body>
 
 </html>
