@@ -1,0 +1,309 @@
+---
+title: 藝術家介紹頁
+layout: ./app/layout.ejs
+engine: ejs
+current: artist-intro
+---
+
+<!-- title card -->
+<div class="container my-10 ">
+    <div class="card mb-10 bg-gray-f0 border-0">
+        <div class="row g-0">
+            <div class="col-lg-4">
+                <img class="fit-cover img-fluid h-100 ratio" src="assets/images/artist01.jpg" alt="artist 01">
+            </div>
+            <div class="col-lg-5">
+                <div class="card-body p-6 pb-8 border bg-white me-lg-3 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="card-title font-squada fs-2 lh-1 mb-0">Michael</h2>
+                        <div>
+                            <!-- <a href="#"><i class="fa fa-discord"></i></a> -->
+                            <!-- <a href="#"><i class="fa fa-facebook-f"></i></a> -->
+                            <a class="me-2" href="#"><i class="fas fa-globe"></i></a>
+                            <a class="me-2" href="#"><i class="fas fa-globe"></i></a>
+                            <a class="me-2" href="#"><i class="fas fa-globe"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                        </div>
+                    </div>
+                    <div class="font-squada fs-7 lh-1 mb-6">0x3ya666…88ef</div>
+
+                    <p class="card-text">
+                        Michael自小在山林長大，能夠與花草樹木大自然進行靈體溝通，創作題材常見大山、大水、花草與樹木，從日常生活出發，擁有個⼈獨樹⼀格的創作風格，作品觸及靈魂深處、探索未知宇宙，透過與大自然的溝通，探討著存在的本質。
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <ul class="list-group list-group-flush mt-4 mt-lg-0 ms-lg-3 border">
+                    <li class="list-group-item py-4 border-primary">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fs-7 lh-2 fw-bold">販售中</span>
+                            <span class="font-squada fs-3 lh-1">168</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-4 border-primary">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fs-7 lh-2 fw-bold">地板價格</span>
+                            <span class="font-squada fs-3 lh-1">0.6 ETH</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-4 border-primary">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fs-7 lh-2 fw-bold">7 日成交</span>
+                            <span class="font-squada fs-3 lh-1">8.8 ETH</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item py-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fs-7 lh-2 fw-bold">30 日成交</span>
+                            <span class="font-squada fs-3 lh-1">23.1 ETH</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- tabs -->
+    <nav class="mb-6 mb-md-10">
+        <div class="nav nav-tabs bg-gray-f0" id="nav-tab" role="tablist">
+            <button class="nav-link font-squada lh-1 fs-2 text-gray-80 active" id="nav-artworks-tab"
+                data-bs-toggle="tab" data-bs-target="#nav-artworks" type="button" role="tab">Art Works<span
+                    class="fs-5 fw-bold">系列作品</span>
+            </button>
+            <button class="nav-link font-squada lh-1 fs-2 text-gray-80 masonryTab" id="nav-collection-tab"
+                data-bs-toggle="tab" data-bs-target="#nav-collection" type="button" role="tab">Collection<span
+                    class="fs-5 fw-bold">收藏品</span>
+            </button>
+
+        </div>
+    </nav>
+    <!-- tab contents -->
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-artworks" role="tabpanel" aria-labelledby="nav-artworks-tab">
+            <div class="artwork-card card rounded-0 border-dark px-4 py-8 py-md-12 ">
+
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h3 class="fs-4 lh-base fw-bold">追求者送我的花</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p class="mb-4 mb-md-12">我又沒有特別喜歡花，為什麼不給我現金就好，擺在那也不知道要幹嘛，只好畫起來看有沒有人要買，阿不然如果真的喜歡我，把這些都買回去八。</p>
+                    </div>
+                    <div class="col-md-2 text-center text-md-end order-3 order-md-2">
+                        <button class="btn-nft bg-white" type="button">more</button>
+                    </div>
+                    <div class="col-md-10 order-2 order-md-3">
+                        <div class="img-group row mb-4">
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid"
+                                        src="assets/images/the-new-york-public-library-vBejyCBXZBY-unsplash.jpg"
+                                        alt="art new york">
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid" src="assets/images/art30.jpg" alt="art 30">
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid" src="assets/images/art14.jpg" alt="art 14">
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid" src="assets/images/art29.jpg" alt="art 29">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="artwork-card card rounded-0 border-dark px-4 py-8 py-md-12 ">
+
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <h3 class="fs-4 lh-base fw-bold">我家窗前的鳥</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p class="mb-4 mb-md-12">家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。</p>
+                    </div>
+                    <div class="col-md-2 text-center text-md-end order-3 order-md-2">
+                        <button class="btn-nft bg-white" type="button">more</button>
+                    </div>
+                    <div class="col-md-10 order-2 order-md-3">
+                        <div class="img-group row mb-4">
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid" src="assets/images/art27.jpg" alt="art 27">
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid" src="assets/images/art20.jpg" alt="art 20">
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid" src="assets/images/art26.jpg" alt="art 26">
+                                </div>
+                            </div>
+                            <div class="col-md-3 ">
+                                <div class="p-2 bg-primary h-100">
+                                    <img class="img-fluid" src="assets/images/art22.jpg" alt="art 22">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-collection" role="tabpanel" aria-labelledby="nav-collection-tab">
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <!-- 瀑布流 -->
+                    <div class="masonry-row row" data-masonry='{"percentPosition": true }'>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art09.jpg" alt="art 09">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">區塊戀-他的私生活
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art10.jpg" alt="art 10">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">夏娃的醜聞</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art02.jpg" alt="art 02">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">藍色啤酒海</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art11.jpg" alt="art 11">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">沒有人愛我</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art12.jpg" alt="art 12">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">不哭不哭眼淚是珍珠
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art03.jpg" alt="art 03">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">十分鐘就到</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art04.jpg" alt="art 04">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">我這樣有美嗎</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3 mb-6 mb-lg-12">
+                            <div class="card  bg-gray-f0 border-0 ">
+                                <div class="p-6 bg-white">
+                                    <div class="home__artwork">
+                                        <img class="card-img-top img-fluid" src="assets/images/art27.jpg" alt="art 27">
+                                        <div class="home__artwork--hover text-white">
+                                            <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+                                            <p class="font-squada lh-1"><i class=" fa fa-ethereum"></i>300</p>
+                                            <div class="btn-nft">more</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">我真的受傷了</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

@@ -94,4 +94,11 @@
             width: 432px;
         }
     }
+
+    &__btn {
+
+        &:hover {
+            color: $danger !important;
+        }
+    }
 }

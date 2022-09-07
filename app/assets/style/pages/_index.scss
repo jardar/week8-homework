@@ -128,20 +128,6 @@
 }
 
 
-// .triangle {
-//     position: absolute;
-//     bottom: 0;
-//     right: 0;
-//     display: none;
-//     /*  三角形  */
-//     width: 0;
-//     height: 0;
-//     border-right: 16px solid #E6553B;
-//     border-top: 16px solid transparent;
-// }
-
-
-
 // section title component in index.html
 .home-sec {
     display: flex;
@@ -178,8 +164,184 @@
 // <!--  Artist 熱門藝術家 -->
 
 
-//
-// .icon-40 {
-//     font-size: 40px;
+// 最新藝術品
+.home__artwork {
+    // display: block;
+    position: relative;
 
-// }
+    img {
+        // width: 258px;
+        // height: 327px;
+        object-fit: cover;
+    }
+
+    &--hover {
+        display: none;
+        margin: 16px;
+        border: 1px solid white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .btn-nft {
+        // display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &:hover {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            opacity: 0.7;
+        }
+
+        .home__artwork--hover {
+            display: block;
+            z-index: 1;
+
+            .btn-nft {
+                color: $primary;
+                background-color: white;
+            }
+        }
+
+
+    }
+}
+
+.swiper-container {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 48px 0;
+    padding: 48px 0;
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+        margin: 48px 0;
+        padding: 48px 0;
+
+    }
+}
+
+.artist-slide {
+    // width: 600px;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: .7s;
+    //
+    // height: 439px;
+    transform: scale(0.7) !important;
+
+    .card-img-overlay {
+        display: none;
+    }
+
+    .artist__text {
+        display: none;
+    }
+}
+
+.artist-slide img {
+    width: 100%;
+    object-fit: cover;
+    // height: auto;
+}
+
+.swiper-slide-active.artist-slide {
+    opacity: 1;
+    z-index: 1;
+
+    transform: scale(1) !important; //scale(1.5);
+
+    .card-img-overlay {
+        display: block;
+    }
+
+    .artist__text {
+        display: block;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 0px;
+    left: 0;
+}
+
+.swiper-pagination-bullet {
+    background-color: $primary;
+    opacity: 1;
+    border-radius: 0;
+
+    &-active {
+        width: 1em;
+        background-color: $secondary;
+
+    }
+}
+
+.artist {
+    &__title {
+        display: block;
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+
+    }
+
+    &__md__title {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+
+    }
+
+    &__btn {
+        position: absolute;
+        // right: 0;
+        bottom: 0;
+        right: 0;
+        background-color: white;
+        margin: 8px;
+
+        @include media-breakpoint-up(md) {
+
+            bottom: 8px;
+            right: 8px;
+
+        }
+    }
+
+    &__text {
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            bottom: 0px;
+            left: 16px;
+            width: 50%;
+        }
+    }
+
+    &__body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}

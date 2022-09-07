@@ -1,0 +1,47 @@
+.artintro {
+    &img {
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &__photo {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+}
+
+
+.list-group-item.active {
+    z-index: 2;
+    color: black;
+    background-color: $gray-f0;
+    border-color: transparent;
+}
+
+
+.swiper-art-container {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 48px 0;
+    // padding: 48px 0;
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+        margin: 48px 0;
+        // padding: 48px 0;
+
+    }
+}
+
+.art-slide {
+    overflow: hidden;
+    transition: .7s;
+}
+
+.art-slide img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}

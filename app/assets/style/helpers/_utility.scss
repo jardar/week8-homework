@@ -5,6 +5,10 @@
 
 }
 
+.border-bottom-1 {
+    border-width: 0 0 1px 0;
+}
+
 // 佔掉左右 gutter 空間
 .g-over-x {
     margin-left: -12px;
@@ -23,7 +27,23 @@
     border-top: 16px solid transparent;
 }
 
+.icon-16 {
+    width: 16px;
+    height: 16px;
+}
+
 .icon-40 {
     font-size: 40px;
 
+}
+
+.fit-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-32 {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 }

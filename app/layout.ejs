@@ -13,8 +13,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Paytone+One&family=Squada+One&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" /> -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" -->
+  <!-- integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" /> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
   <!-- <link rel="stylesheet" href="./assets/style/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/style/all.css">
 </head>
 
@@ -52,23 +59,91 @@
             <a class="nav-link fs-6 fw-bold text-nowrap py-6 px-lg-12 py-lg-10" href="#">探索</a>
           </li>
           <li class="nav-item border-start border-gray-f0 border-lg-primary text-center">
-            <a class="nav-link fs-6 fw-bold text-nowrap py-6 px-lg-12 py-lg-10" href="#">市值</a>
+            <a class="nav-link fs-6 fw-bold text-nowrap py-6 px-lg-12 py-lg-10" href="market.html">市值</a>
           </li>
           <li class="nav-item border-start border-gray-f0 border-lg-primary text-center mb-6 mb-lg-0">
-            <a class="nav-link ps-lg-12 py-lg-10 fs-0 d-none d-lg-block" href="#">
+            <button class="header__btn nav-link ps-lg-12 py-lg-10 fs-0 d-none d-lg-block border-0"
+              data-bs-toggle="modal" data-bs-target="#connect-wallet" type="button">
               <i class="fas fa-wallet  fs-4"></i>
-            </a>
-            <a href="#" class="btn btn-danger py-3 fs-6 border-primary text-white w-100 d-lg-none">連結錢包</a>
+            </button>
+            <button type="button" class="btn btn-danger py-3 fs-6 border-primary text-white w-100 d-lg-none"
+              data-bs-toggle="modal" data-bs-target="#connect-wallet">
+              連結錢包
+            </button>
           </li>
         </ul>
 
       </div>
-
+    </div>
+    <div class="modal fade" id="connect-wallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <!-- Vertically centered scrollable modal -->
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ms-auto" id="staticBackdropLabel">連結你的錢包</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-2">
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect01.png" alt="metamask">
+                    <span class="font-squada fs-7 lh-1 mb-0">MetaMask</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect02.png" alt="coinbase">
+                    <span class="font-squada fs-7 lh-1 mb-0">Coinbase Wallet</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect03.png" alt="wallet connect">
+                    <span class="font-squada fs-7 lh-1 mb-0">WalletConnect</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect04.png" alt="phantom">
+                    <span class="font-squada fs-7 lh-1 mb-0">Phantom</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect05.png" alt="Glow">
+                    <span class="font-squada fs-7 lh-1 mb-0">Glow</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect06.png" alt="fortmatic">
+                    <span class="font-squada fs-7 lh-1 mb-0">Fortmatic</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0 justify-content-center pt-2">
+            <button type="button" class="btn btn-bid px-12 py-2 fs-6" data-bs-dismiss="modal">連結錢包</button>
+          </div>
+        </div>
+      </div>
     </div>
 
   </nav>
-
-
 
   <main>
     <%- contents %>
@@ -78,7 +153,15 @@
     © ART NFT. All Rights Reserved
   </footer>
 
+
+
+
   <script src="./assets/js/vendors.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
   <script src="./assets/js/all.js"></script>
 </body>
 
