@@ -62,7 +62,7 @@
 
     &:hover {
         border-color: $danger;
-        border-width: 2px;
+        border-width: 1px;
 
         ::after {
             content: '\f00c';
