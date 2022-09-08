@@ -1,114 +1,688 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Boostrap Index</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/style/bootstrap.css">
-    <link rel="stylesheet" href="./assets/style/all.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    ART NFT 主頁
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Paytone+One&family=Squada+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" /> -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" -->
+  <!-- integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" /> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
+  <!-- <link rel="stylesheet" href="./assets/style/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-gray-f0">
+    <div class="container-md">
+
+      <a class="navbar-brand py-lg-8" href="index.html">
+        <img class="header__logo" src="assets/images/logo.svg" alt="logo">
+      </a>
+
+      <form class="d-flex ms-auto px-lg-12 py-lg-8 ">
+        <input class="header__search form-control me-2 d-none d-lg-block me-6" type="search" placeholder="搜尋作品名稱、藝術家名稱"
+          aria-label="Search">
+        <button class="btn d-none d-lg-block" type="button" onclick="location.href='art-filter.html'">
+          <i class="fa-solid fa-magnifying-glass fs-4"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+        <button class="btn box-shadow-none d-lg-none" type="button" id="toggleSearch">
+          <i class="fa-solid fa-magnifying-glass fs-6"></i>
+        </button>
+      </form>
+
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars fs-6 d-none"></i>
+        <i class="fa-solid fa-xmark fs-5"></i>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-0 " id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center mb-2 mb-lg-0 ">
+          <li class="header__menu__item nav-item">
+            <a class="nav-link py-6 px-lg-12 py-lg-10" href="discover.html">探索</a>
+          </li>
+          <li class="header__menu__item nav-item">
+            <a class="nav-link py-6 px-lg-12 py-lg-10" href="market.html">市值</a>
+          </li>
+          <li class="header__menu__wallet nav-item align-self-stretch align-self-lg-center">
+            <a class="nav-link pe-0 py-lg-10 d-none d-lg-block" href="#" data-bs-toggle="modal"
+              data-bs-target="#connect-wallet">
+              <i class="fa-solid fa-wallet fs-lg-4 ps-12 "></i>
+            </a>
+            <a class="d-lg-none d-block btn" href="#" style="margin-top: -1px;" data-bs-toggle="modal"
+              data-bs-target="#connect-wallet">連結錢包</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 隱藏的 search bar ,在手機版點擊才會出現 -->
+      <form class="header__search__bar d-none d-flex justify-content-between align-items-center" id="headerSearchBar">
+        <button class="btn " type="button" id="searchBack">
+          <i class="fa-solid fa-angle-left fs-6"></i>
+        </button>
+
+        <input class="header__search form-control me-2 " type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+
+        <button class="btn" type="buton" id="searchBtn">
+          <i class="fa-solid fa-magnifying-glass fs-6"></i>
+        </button>
+      </form>
+
+    </div>
+    <!-- modal -->
+    <div class="modal fade" id="connect-wallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <!-- Vertically centered scrollable modal -->
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ms-auto" id="staticBackdropLabel">連結你的錢包</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-2">
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect01.png" alt="metamask">
+                    <span class="font-squada fs-7 lh-1 mb-0">MetaMask</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect02.png" alt="coinbase">
+                    <span class="font-squada fs-7 lh-1 mb-0">Coinbase Wallet</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect03.png" alt="wallet connect">
+                    <span class="font-squada fs-7 lh-1 mb-0">WalletConnect</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect04.png" alt="phantom">
+                    <span class="font-squada fs-7 lh-1 mb-0">Phantom</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect05.png" alt="Glow">
+                    <span class="font-squada fs-7 lh-1 mb-0">Glow</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect06.png" alt="fortmatic">
+                    <span class="font-squada fs-7 lh-1 mb-0">Fortmatic</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0 justify-content-center pt-2">
+            <button type="button" class="btn btn-bid px-12 py-2 fs-6" data-bs-dismiss="modal">連結錢包</button>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
+  <main>
     
-<div class="container">
-  <h1 class="index__h1">這是一段話</h1>
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    A simple secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    A simple light alert—check it out!
-  </div>
-  <div class="alert alert-dark" role="alert">
-    A simple dark alert—check it out!
-  </div>
-</div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- ART NFT  -->
+<div class="container-md mb-10">
+  <div class="home__nft row mt-10 ">
+    <div class="col-xl-8 order-xl-1">
+      <div class="g-over-x">
+        <div class="row g-xl-0">
+          <div class="col-xl-1 d-none d-xl-block bg-primary">
+            <div
+              class="text-vertical d-flex justify-content-center align-items-center pt-6 bg-primary text-white mx-auto ">
+              <h2 class="font-squada fs-2 lh-1 m-0 mb-4">Recommend </h2>
+              <h3 class="fs-5 lh-base fw-bold m-0">推 薦 系 列</h3>
+            </div>
+          </div>
+          <div class="col-xl-11">
+            <div class="ratio" style="--bs-aspect-ratio: 66%;">
+              <img class="img-fluid" src="assets/images/art01.jpg" alt="art 1">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        ...
+    </div>
+
+    <div class="col-xl-4 order-xl-2">
+      <div class="card h-100 py-4 border-bottom-2 g-over-x">
+        <div class="card-body px-3 px-xl-6">
+          <p class="font-squada fs-6 mb-2">Kemus Wu</p>
+          <h2 class="card-title fs-2 fw-bold mb-6">瞳孔:流動的脈絡</h2>
+          <p class="card-text mb-0">眼睛，總是吸引著我們的注意力，看、被看，也許眼睛裡有著從另一個世界看我們的世界。</p>
+        </div>
+
+        <div class="card-footer text-end bg-white border-0 pb-2 px-3">
+          <a href="art-intro.html" class="btn-nft">more</a>
+        </div>
+
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+
+    <div class="col-xl-3 order-xl-4 ">
+      <div class="g-over-x h-100">
+        <div class="ratio" style="--bs-aspect-ratio: 103.3%;">
+          <img class="img-fluid fit-cover" src="assets/images/art02.jpg" alt="art 2">
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 order-xl-3">
+      <div class="home__bird card h-100 py-4  g-over-x">
+        <div class="card-body px-3">
+          <p class="font-squada fs-6 mb-2">Joanne</p>
+          <h2 class="card-title fs-4 fw-bold mb-6">海洋波度</h2>
+          <p class="card-text mb-0">海洋的奧秘向我們揭示了深不可測的一面，它的深度——反映了我們的恐懼、同時也吸引著我們。</p>
+        </div>
+
+        <div class="card-footer text-end bg-white border-0 pb-2 px-3">
+          <a href="art-intro.html" class="btn-nft">more</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-xl-3 order-xl-5">
+      <div class="g-over-x">
+        <div class="ratio" style="--bs-aspect-ratio: 103.3%;">
+          <img class="img-fluid fit-cover" src="assets/images/art21.jpg" alt="art21">
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 order-xl-4">
+      <div class="home__bird card h-100 py-4 g-over-x">
+        <div class="card-body px-3">
+          <p class="font-squada fs-6 mb-2">Michael</p>
+          <h2 class="card-title fs-4 fw-bold mb-6">我家窗前的鳥</h2>
+          <p class="card-text mb-0">家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。</p>
+        </div>
+
+        <div class="card-footer text-end bg-white border-0 pb-2 px-3">
+          <a href="art-intro.html" class="btn-nft">more</a>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
+<!-- Ranking 市價排行榜-->
+<div class="container mb-10">
+  <div class="row mb-6 mb-xl-12">
+    <div class="col">
+      <div class="home-sec">
+        <h2 class="home-sec-title"> Ranking</h2>
+        <h3 class="home-sec-subtitle">市價排行榜</h3>
+        <a href="market.html" class="btn-nft border-0">more</a>
+      </div>
+    </div>
+  </div>
+  <!-- Ranking Card -->
+  <div class="row gy-4 gy-xl-6">
+    <div class="col-xl-4">
+      <div class="large-card card flex-row border-primary rounded-0">
+        <div class=" d-flex align-items-center">
+          <div class="num font-paytone fs-4 lh-1 px-2 px-xl-4">
+            <p class="mb-0">1</p>
+          </div>
 
-    <footer class="footer">
-      footer
-    </footer>
+          <a href="art-intro.html" class="rank__thumb ">
+            <img class="" src="assets/images/art04.jpg" alt="image" width="87" height="91">
+            <div class="triangle"></div>
+            <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+          </a>
+        </div>
+        <div class="card-body px-0 py-0">
+          <div class="card-title fs-6 fw-bold py-4 mb-0 ps-2 ps-xl-4">散步遇到的女人</div>
+          <div class="card-footer d-flex justify-content-between py-2 ps-2 ps-xl-4 border-primary bg-white">
+            <div class="card-text font-squada fs-7 lh-1">Zoe Jiang</div>
+            <div class="card-text font-squada fs-7 lh-1"><i class="fas fa-gem fs-7 me-2"></i>300</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="large-card card flex-row border-primary rounded-0">
+        <div class=" d-flex align-items-center">
+          <div class="num font-paytone fs-4 lh-1 px-2 px-xl-4">
+            <p class="mb-0">2</p>
+          </div>
 
-    <script src="./assets/js/vendors.js"></script>
-    <script src="./assets/js/all.js"></script>
-  </body>
+          <a href="art-intro.html" class="rank__thumb ">
+            <img class="" src="assets/images/art05.jpg" alt="image" width="87" height="91">
+            <div class="triangle"></div>
+            <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+          </a>
+        </div>
+        <div class="card-body px-0 py-0">
+          <div class="card-title fs-6 fw-bold py-4 mb-0 ps-2 ps-xl-4">爆炸頭的母親</div>
+          <div class="card-footer d-flex justify-content-between py-2 ps-2 ps-xl-4 border-primary bg-white">
+            <div class="card-text font-squada fs-7 lh-1">Yui</div>
+            <div class="card-text font-squada fs-7 lh-1"><i class="fas fa-gem fs-7 me-2"></i>300</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="large-card card flex-row border-primary rounded-0">
+        <div class=" d-flex align-items-center">
+          <div class="num font-paytone fs-4 lh-1 px-2 px-xl-4">
+            <p class="mb-0">3</p>
+          </div>
+
+          <a href="art-intro.html" class="rank__thumb ">
+            <img class="" src="assets/images/art06.jpg" alt="image" width="87" height="91">
+            <div class="triangle"></div>
+            <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+          </a>
+        </div>
+        <div class="card-body px-0 py-0">
+          <div class="card-title fs-6 fw-bold py-4 mb-0 ps-2 ps-xl-4">夏天的時候</div>
+          <div class="card-footer d-flex justify-content-between py-2 ps-2 ps-xl-4 border-primary bg-white">
+            <div class="card-text font-squada fs-7 lh-1">Bug Lin</div>
+            <div class="card-text font-squada fs-7 lh-1"><i class="fas fa-gem fs-7 me-2"></i>300</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card flex-row border-primary rounded-0">
+        <div class=" d-flex align-items-center">
+          <div class="num font-paytone fs-4 lh-1 px-2 px-xl-4">
+            <p class="mb-0">4</p>
+          </div>
+
+          <a href="art-intro.html" class="rank__thumb ">
+            <img class="" src="assets/images/art13.jpg" alt="image" width="87" height="91">
+            <div class="triangle"></div>
+            <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+          </a>
+        </div>
+        <div class="card-body px-0 py-0">
+          <div class="card-title fs-6 fw-bold py-4 mb-0 ps-2 ps-xl-4">追求者送我的花</div>
+          <div class="card-footer d-flex justify-content-between py-2 ps-2 ps-xl-4 border-primary bg-white">
+            <div class="card-text font-squada fs-7 lh-1">Michael</div>
+            <div class="card-text font-squada fs-7 lh-1"><i class="fas fa-gem fs-7 me-2"></i>300</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card flex-row border-primary rounded-0">
+        <div class=" d-flex align-items-center">
+          <div class="num font-paytone fs-4 lh-1 px-2 px-xl-4">
+            <p class="mb-0">5</p>
+          </div>
+
+          <a href="art-intro.html" class="rank__thumb ">
+            <img class="" src="assets/images/art07.jpg" alt="image" width="87" height="91">
+            <div class="triangle"></div>
+            <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+          </a>
+        </div>
+        <div class="card-body px-0 py-0">
+          <div class="card-title fs-6 fw-bold py-4 mb-0 ps-2 ps-xl-4">今天釣到的魚</div>
+          <div class="card-footer d-flex justify-content-between py-2 ps-2 ps-xl-4 border-primary bg-white">
+            <div class="card-text font-squada fs-7 lh-1">Wei JJ</div>
+            <div class="card-text font-squada fs-7 lh-1"><i class="fas fa-gem fs-7 me-2"></i>300</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card flex-row border-primary rounded-0">
+        <div class=" d-flex align-items-center">
+          <div class="num font-paytone fs-4 lh-1 px-2 px-xl-4">
+            <p class="mb-0">6</p>
+          </div>
+
+          <a href="art-intro.html" class="rank__thumb ">
+            <img class="" src="assets/images/art08.jpg" alt="image" width="87" height="91">
+            <div class="triangle"></div>
+            <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+          </a>
+        </div>
+        <div class="card-body px-0 py-0">
+          <div class="card-title fs-6 fw-bold py-4 mb-0 ps-2 ps-xl-4">人生中的貓咪們</div>
+          <div class="card-footer d-flex justify-content-between py-2 ps-2 ps-xl-4 border-primary bg-white">
+            <div class="card-text font-squada fs-7 lh-1">Even Lai</div>
+            <div class="card-text font-squada fs-7 lh-1"><i class="fas fa-gem fs-7 me-2"></i>300</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  Artist 熱門藝術家 swiper-->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="home-sec">
+        <h2 class="home-sec-title"> Artist</h2>
+        <h3 class="home-sec-subtitle">熱門藝術家</h3>
+        <a href="artist-intro.html" class="btn-nft border-0">more</a>
+      </div>
+    </div>
+  </div>
+  <div class="row position-relative">
+    <div class="col">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="artist-slide swiper-slide">
+            <div class="position-relative">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="assets/images/artist01.jpg" alt="artist 01">
+                <div class="card-img-overlay">
+                  <h5 class="artist__title card-title font-squada fs-3 lh-1 m-2">Antony Wu</h5>
+                  <h5 class="artist__md__title card-title font-squada fs-2 lh-1 m-0">Antony<br> Wu</h5>
+
+                  <a href="artist-intro.html" class="artist__btn btn-nft">more</a>
+                </div>
+              </div>
+              <p class="artist__text p-2 p-md-4 p-lg-6 bg-white my-4">​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+          <div class="artist-slide swiper-slide">
+            <div class="position-relative">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="assets/images/artist02.jpg" alt="artist 02">
+                <div class="card-img-overlay">
+                  <h5 class="artist__title card-title font-squada fs-3 lh-1 m-2">Antony Wu</h5>
+                  <h5 class="artist__md__title card-title font-squada fs-2 lh-1 m-0">Antony<br> Wu</h5>
+
+                  <a href="artist-intro.html" class="artist__btn btn-nft">more</a>
+                </div>
+              </div>
+              <p class="artist__text p-2 p-md-4 p-lg-6 bg-white my-4">​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+          <div class="artist-slide swiper-slide">
+            <div class="position-relative">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="assets/images/artist04.jpg" alt="artist 04">
+                <div class="card-img-overlay">
+                  <h5 class="artist__title card-title font-squada fs-3 lh-1 m-2">Antony Wu</h5>
+                  <h5 class="artist__md__title card-title font-squada fs-2 lh-1 m-0">Antony<br> Wu</h5>
+
+                  <a href="artist-intro.html" class="artist__btn btn-nft">more</a>
+                </div>
+              </div>
+              <p class="artist__text p-2 p-md-4 p-lg-6 bg-white my-4">​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+          <div class="artist-slide swiper-slide">
+            <div class="position-relative">
+              <div class="card bg-dark text-white">
+                <img class="card-img" src="assets/images/artist05.jpg" alt="artist 05">
+                <div class="card-img-overlay">
+                  <h5 class="artist__title card-title font-squada fs-3 lh-1 m-2">Antony Wu</h5>
+                  <h5 class="artist__md__title card-title font-squada fs-2 lh-1 m-0">Antony<br> Wu</h5>
+
+                  <a href="artist-intro.html" class="artist__btn btn-nft">more</a>
+                </div>
+              </div>
+              <p class="artist__text p-2 p-md-4 p-lg-6 bg-white my-4">​喜愛大自然，創作題材常見大山、大水、花草與樹木。</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="swiper-button-next"></div> -->
+        <!-- <div class="swiper-button-prev"></div> -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- Artwork 最新藝術品 瀑布流-->
+<div class="container-lg mb-12">
+  <div class="row mb-12">
+    <div class="col">
+      <div class="home-sec">
+        <h2 class="home-sec-title"> Artwork</h2>
+        <h3 class="home-sec-subtitle">最新藝術品</h3>
+        <a href="art-intro.html" class="btn-nft border-0">more</a>
+      </div>
+    </div>
+  </div>
+  <!-- 瀑布流 -->
+  <div class="masonry-row row" data-masonry='{"percentPosition": true }'>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 0%; top: 0px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio ratio-1x1">
+              <img class="card-img-top img-fluid" src="assets/images/art09.jpg" alt="art 09">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">區塊戀-他的私生活</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio" style="--bs-aspect-ratio: 130.5%;">
+              <img class="card-img-top img-fluid" src="assets/images/art10.jpg" alt="art 10">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">夏娃的醜聞</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio ratio-1x1">
+              <img class="card-img-top img-fluid" src="assets/images/art02.jpg" alt="art 02">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">藍色啤酒海</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 33.3333%; top: 171px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio" style="--bs-aspect-ratio: 65.5%;">
+              <img class="card-img-top img-fluid" src="assets/images/art11.jpg" alt="art 11">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">沒有人愛我</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 33.3333%; top: 310px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio" style="--bs-aspect-ratio: 67.4%;">
+              <img class="card-img-top img-fluid" src="assets/images/art12.jpg" alt="art 12">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">不哭不哭眼淚是珍珠</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 0%; top: 362px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio ratio-1x1">
+              <img class="card-img-top img-fluid" src="assets/images/art03.jpg" alt="art 03">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">十分鐘就到</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 66.6667%; top: 378px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio" style="--bs-aspect-ratio: 153%;">
+              <img class="card-img-top img-fluid" src="assets/images/art04.jpg" alt="art 04">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">我這樣有美嗎</div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-4 col-xl-3 mb-4" style="position: absolute; left: 33.3333%; top: 488px;">
+      <div class="card  bg-gray-f0 border-0 ">
+        <div class="p-2 p-md-4 p-lg-6 bg-white">
+          <div class="home__artwork">
+            <div class="ratio ratio-1x1">
+              <img class="card-img-top img-fluid" src="assets/images/art27.jpg" alt="art 27">
+            </div>
+            <div class="home__artwork--hover text-white">
+              <p class="fw-bold p-4 mb-0">唯一想擁有的人，唯一不可以擁有的</p>
+              <p class="font-squada lh-1"><i class="fa-brands fa-ethereum me2"></i>300</p>
+              <button class="btn-nft" onclick="location.href='art-intro.html'">more</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-title fs-7 fw-bold py-4 mb-0 border-bottom border-primary">我真的受傷了</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Join Us 創建並出售你的藝術品 -->
+<div class="">
+  <div class="text-center border-bottom border-4 border-primary pb-8 mb-2">
+    <h2 class="font-squada fs-2 lh-1">Join Us</h2>
+    <h3 class="fs-5 lh-base fw-bold">創建並出售你的藝術品</h3>
+  </div>
+  <div class="border-bottom border-primary mb-12 mb-xl-14"></div>
+
+  <div class="container mb-xl-8">
+    <div class="row">
+      <div class="col-xl-3">
+        <div class="text-center mb-12">
+          <i class="fas fa-wallet text-secondary icon-40 mb-4"></i>
+          <h4 class="fs-6 lh-base fw-bold mb-6">設置你的錢包</h4>
+          <p class="mb-0">設置好您選擇的錢包後 點擊右上角的錢包圖標進行連接</p>
+        </div>
+      </div>
+
+      <div class="col-xl-3">
+        <div class="text-center mb-12">
+          <i class="fas fa-wallet text-secondary icon-40 mb-4"></i>
+          <h4 class="fs-6 lh-base fw-bold mb-6">創建您的主頁</h4>
+          <p class="mb-0">註冊成為會員，編輯您的資料 讓大家了解你</p>
+        </div>
+      </div>
+
+      <div class="col-xl-3">
+        <div class="text-center mb-12">
+          <i class="fas fa-wallet text-secondary icon-40 mb-4"></i>
+          <h4 class="fs-6 lh-base fw-bold mb-6">添加你的 NFT</h4>
+          <p class="mb-0">上傳你的作品 添加標題和描述</p>
+        </div>
+      </div>
+
+      <div class="col-xl-3">
+        <div class="text-center mb-12">
+          <i class="fas fa-wallet text-secondary icon-40 mb-4"></i>
+          <h4 class="fs-6 lh-base fw-bold mb-6">列出它們出售</h4>
+          <p class="mb-0">選擇出售 NFT 的方式 並設定價格，等待有緣人</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-bottom border-primary mb-2"></div>
+
+</div>
+  </main>
+
+  <footer class="footer py-6 border-top border-4 border-primary text-center bg-gray-f0">
+    © ART NFT. All Rights Reserved
+  </footer>
+
+
+
+
+  <script src="./assets/js/vendors.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
+  <script src="./assets/js/all.js"></script>
+</body>
 
 </html>

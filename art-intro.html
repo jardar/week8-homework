@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    藝術品介紹頁
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Paytone+One&family=Squada+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" /> -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" -->
+  <!-- integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" /> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
+  <!-- <link rel="stylesheet" href="./assets/style/bootstrap.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-gray-f0">
+    <div class="container-md">
+
+      <a class="navbar-brand py-lg-8" href="index.html">
+        <img class="header__logo" src="assets/images/logo.svg" alt="logo">
+      </a>
+
+      <form class="d-flex ms-auto px-lg-12 py-lg-8 ">
+        <input class="header__search form-control me-2 d-none d-lg-block me-6" type="search" placeholder="搜尋作品名稱、藝術家名稱"
+          aria-label="Search">
+        <button class="btn d-none d-lg-block" type="button" onclick="location.href='art-filter.html'">
+          <i class="fa-solid fa-magnifying-glass fs-4"></i>
+        </button>
+        <button class="btn box-shadow-none d-lg-none" type="button" id="toggleSearch">
+          <i class="fa-solid fa-magnifying-glass fs-6"></i>
+        </button>
+      </form>
+
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars fs-6 d-none"></i>
+        <i class="fa-solid fa-xmark fs-5"></i>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-0 " id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center mb-2 mb-lg-0 ">
+          <li class="header__menu__item nav-item">
+            <a class="nav-link py-6 px-lg-12 py-lg-10" href="discover.html">探索</a>
+          </li>
+          <li class="header__menu__item nav-item">
+            <a class="nav-link py-6 px-lg-12 py-lg-10" href="market.html">市值</a>
+          </li>
+          <li class="header__menu__wallet nav-item align-self-stretch align-self-lg-center">
+            <a class="nav-link pe-0 py-lg-10 d-none d-lg-block" href="#" data-bs-toggle="modal"
+              data-bs-target="#connect-wallet">
+              <i class="fa-solid fa-wallet fs-lg-4 ps-12 "></i>
+            </a>
+            <a class="d-lg-none d-block btn" href="#" style="margin-top: -1px;" data-bs-toggle="modal"
+              data-bs-target="#connect-wallet">連結錢包</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 隱藏的 search bar ,在手機版點擊才會出現 -->
+      <form class="header__search__bar d-none d-flex justify-content-between align-items-center" id="headerSearchBar">
+        <button class="btn " type="button" id="searchBack">
+          <i class="fa-solid fa-angle-left fs-6"></i>
+        </button>
+
+        <input class="header__search form-control me-2 " type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+
+        <button class="btn" type="buton" id="searchBtn">
+          <i class="fa-solid fa-magnifying-glass fs-6"></i>
+        </button>
+      </form>
+
+    </div>
+    <!-- modal -->
+    <div class="modal fade" id="connect-wallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <!-- Vertically centered scrollable modal -->
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title ms-auto" id="staticBackdropLabel">連結你的錢包</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-2">
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect01.png" alt="metamask">
+                    <span class="font-squada fs-7 lh-1 mb-0">MetaMask</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect02.png" alt="coinbase">
+                    <span class="font-squada fs-7 lh-1 mb-0">Coinbase Wallet</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect03.png" alt="wallet connect">
+                    <span class="font-squada fs-7 lh-1 mb-0">WalletConnect</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect04.png" alt="phantom">
+                    <span class="font-squada fs-7 lh-1 mb-0">Phantom</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect05.png" alt="Glow">
+                    <span class="font-squada fs-7 lh-1 mb-0">Glow</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button class="btn-connect w-100" type="button">
+                  <div class="d-flex align-items-center">
+                    <img class="icon-16 me-4" src="assets/images/logo/connect06.png" alt="fortmatic">
+                    <span class="font-squada fs-7 lh-1 mb-0">Fortmatic</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0 justify-content-center pt-2">
+            <button type="button" class="btn btn-bid px-12 py-2 fs-6" data-bs-dismiss="modal">連結錢包</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    
+<section class="container mt-6 mb-10 my-md-10">
+    <div class="row">
+        <div class="col-lg-6 mb-6">
+            <img class="artintro__img img-fluid" src="assets/images/art21.jpg" alt="art 21">
+        </div>
+        <div class="col-lg-6 mb-6">
+            <div class="card border-primary rounded-0 h-100">
+                <div class="card-header bg-white border-primary pt-lg-4 pb-lg-10 px-lg-10">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="card-title fs-2 fw-bold">兩情相悅</div>
+                        <div>
+                            <img class="artintro__photo" src="assets/images/artist01.jpg" alt="artist 01">
+                            <a class="font-squada fs-7 lh-1 text-decoration-none" href="artist-intro.html">Michael</a>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-end">
+                        <div>
+                            <p class="fs-8 text-gray-80 mb-2">最高出價</p>
+                            <div class="d-flex align-items-center">
+                                <img class="artintro__photo me-2" src="assets/images/user01.jpg" alt="user 01">
+                                <i class="fa-solid fa-arrow-right me-2"></i>
+                                <p class="font-squda lh-1 mb-0">0.044Eth</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-bid" type="button" onclick="location.href='market.html'">出價</button>
+                    </div>
+                </div>
+
+                <div class="card-body px-lg-10 pt-lg-8">
+                    <p>3/14情人節外面剛好有兩隻鳥，也在過情人節。</p>
+                    <p>而且其中一隻竟然有梳油頭，不知道是不是有用定型液，他們感情真好，出門還會特別打扮，看著看著不禁思考，我怎麼會變這樣？</p>
+                    <p>好羨慕啊，我也要有這樣兩情相悅的另一半。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6  mb-6 mb-lg-6">
+            <div class="accordion">
+                <div class="accordion-item border-primary">
+                    <h2 class="accordion-header border-bottom border-primary" id="attribution">
+                        <button class="accordion-button fw-bold p-6 bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseAttr" aria-expanded="true" aria-controls="collapseAttr">
+                            屬性
+                        </button>
+                    </h2>
+
+                    <div id="collapseAttr" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body p-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <p class="mb-2">品種</p>
+                                    <p class="text-gray-80 mb-2">青藍金剛鸚鵡</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <p class="mb-2">鳥的數量</p>
+                                    <p class="text-gray-80 mb-2">2隻</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <p class="mb-2">是否有花草</p>
+                                    <p class="text-gray-80 mb-2">是</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <p class="mb-2">鳥的顏色</p>
+                                    <p class="text-gray-80 mb-2">藍色</p>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6  mb-6 ">
+            <div class="accordion">
+                <div class="accordion-item border-primary">
+                    <h2 class="accordion-header border-bottom border-primary">
+                        <button class="accordion-button fw-bold p-6 bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBid" aria-expanded="true" aria-controls="collapseBid">
+                            出價
+                        </button>
+                    </h2>
+
+                    <div id="collapseBid" class="accordion-collapse collapse show" aria-labelledby="headingBid">
+                        <div class="accordion-body p-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item active ">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p class="text-start mb-0 ">價格</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="text-gray-80 mb-0">期限</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center">
+                                                <img class="artintro__photo me-2" src="assets/images/user01.jpg"
+                                                    alt="user 01">
+                                                <i class="fa-solid fa-arrow-right me-2"></i>
+                                                <p class="font-squda lh-1 mb-0">0.044Eth</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="text-gray-80 mb-0">3個月後</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center">
+                                                <img class="artintro__photo me-2" src="assets/images/user02.jpg"
+                                                    alt="user 01">
+                                                <i class="fa-solid fa-arrow-right me-2"></i>
+                                                <p class="font-squda lh-1 mb-0">0.054Eth</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="text-gray-80 mb-0">1個月後</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center">
+                                                <img class="artintro__photo me-2" src="assets/images/user03.jpg"
+                                                    alt="user 01">
+                                                <i class="fa-solid fa-arrow-right me-2"></i>
+                                                <p class="font-squda lh-1 mb-0">0.044Eth</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="text-gray-80 mb-0">2週後</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6  mb-6  mb-md-6">
+            <div class="accordion">
+                <div class="accordion-item border-primary">
+                    <h2 class="accordion-header border-bottom border-primary" id="attribution">
+                        <button class="accordion-button fw-bold p-6 bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseInfo" aria-expanded="true" aria-controls="collapseAttr">
+                            基本資訊
+                        </button>
+                    </h2>
+
+                    <div id="collapseInfo" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body p-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <p class="mb-2">擁有者</p>
+                                    <p class="text-gray-80 mb-2">0xa543x…1283</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <p class="mb-2">代幣ID</p>
+                                    <p class="text-gray-80 mb-2">#1234</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <p class="mb-2">合約地址</p>
+                                    <p class="text-gray-80 mb-2">青藍金剛鸚鵡</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-6 ">
+            <div class="accordion">
+                <div class="accordion-item border-primary">
+                    <h2 class="accordion-header border-bottom border-primary">
+                        <button class="accordion-button fw-bold p-6 bg-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseHist" aria-expanded="true" aria-controls="collapseBid">
+                            交易歷史
+                        </button>
+                    </h2>
+
+                    <div id="collapseHist" class="accordion-collapse collapse show" aria-labelledby="headingBid">
+                        <div class="accordion-body p-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item active ">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <p class="text-start mb-0 ">事件</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="text-gray-80 mb-0">價格</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-gray-80 mb-0">從</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-gray-80 mb-0">時間</p>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-2">
+                                            <p class="text-gray-80 mb-0">上架</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="text-gray-80 mb-0">2nb</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center">
+                                                <img class="artintro__photo me-2" src="assets/images/user01.jpg"
+                                                    alt="user 01">
+                                                <p class="font-squda lh-1 mb-0">Antony WU</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-gray-80 mb-0">14小時前</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row align-items-center">
+                                        <div class="col-2">
+                                            <p class="text-gray-80 mb-0">出價</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <p class="text-gray-80 mb-0">2nb</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="d-flex align-items-center">
+                                                <img class="artintro__photo me-2" src="assets/images/user02.jpg"
+                                                    alt="user 01">
+                                                <p class="font-squda lh-1 mb-0">Antony WU</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p class="text-gray-80 mb-0">2天前</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 其餘作品 -->
+    <div class="row mt-10">
+        <div class="col">
+            <div class="home-sec">
+                <h2 class="home-sec-title"> Other</h2>
+                <h3 class="home-sec-subtitle">其餘作品</h3>
+                <a href="discover.html" class="btn-nft border-0">more</a>
+            </div>
+        </div>
+    </div>
+    <!-- 其餘作品 swiper -->
+    <div class="row">
+        <div class="col">
+            <div class="swiper-art-container">
+                <div class="swiper-wrapper">
+                    <div class="art-slide swiper-slide">
+                        <div class="card bg-gray-f0 border-0">
+                            <div class="p-md-6 bg-white">
+                                <img class="card-img" src="assets/images/art22.jpg" alt="artist 22">
+                            </div>
+
+                            <p class="card-text fw-bold py-4 border-primary border-bottom">群聚的小鳥們</p>
+                        </div>
+                    </div>
+                    <div class="art-slide swiper-slide">
+                        <div class="card bg-gray-f0 border-0 ">
+                            <div class="p-md-6 bg-white">
+                                <img class="card-img" src="assets/images/art27.jpg" alt="artist 22">
+                            </div>
+                            <p class="card-text fw-bold py-4 border-primary border-bottom">我真的受傷了</p>
+                        </div>
+                    </div>
+                    <div class="art-slide swiper-slide">
+                        <div class="card bg-gray-f0 border-0 ">
+                            <div class="p-md-6 bg-white">
+                                <img class="card-img" src="assets/images/art20.jpg" alt="artist 22">
+                            </div>
+                            <p class="card-text fw-bold py-4 border-primary border-bottom">這兩隻也太像企鵝了吧</p>
+                        </div>
+                    </div>
+                    <div class="art-slide swiper-slide">
+                        <div class="card bg-gray-f0 border-0 ">
+                            <div class="p-md-6 bg-white">
+                                <img class="card-img" src="assets/images/art22.jpg" alt="artist 22">
+                            </div>
+                            <p class="card-text fw-bold py-4 border-primary border-bottom">群聚的小鳥們</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- <div class="swiper-button-next"></div> -->
+                <!-- <div class="swiper-button-prev"></div> -->
+                <div class="swiper-art-pagination text-center mt-6 mt-md-12"></div>
+            </div>
+        </div>
+    </div>
+</section>
+  </main>
+
+  <footer class="footer py-6 border-top border-4 border-primary text-center bg-gray-f0">
+    © ART NFT. All Rights Reserved
+  </footer>
+
+
+
+
+  <script src="./assets/js/vendors.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
+  <script src="./assets/js/all.js"></script>
+</body>
+
+</html>
