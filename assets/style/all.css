@@ -16243,7 +16243,7 @@ body {
 
 .btn-connect:hover {
   border-color: #E6553B;
-  border-width: 2px;
+  border-width: 1px;
 }
 
 .btn-connect:hover ::after {
