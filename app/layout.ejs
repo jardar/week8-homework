@@ -27,54 +27,65 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-gray-f0 py-4 py-lg-0">
+  <nav class="navbar navbar-expand-lg bg-gray-f0">
+    <div class="container-md">
 
-    <div class="container">
-
-      <a class="header__logo navbar-brand" href="index.html">
-        <img src="assets/images/logo.svg" alt="NFT 交易平台">
+      <a class="navbar-brand py-lg-8" href="index.html">
+        <img class="header__logo" src="assets/images/logo.svg" alt="logo">
       </a>
 
-
-      <form
-        class="header__search d-flex justify-content-end align-items-center px-lg-12 py-lg-8 border-start border-end border-gray-f0 border-lg-primary  ms-auto ms-lg-auto">
-        <input class="form-control border-0 py-2 me-6 d-none d-lg-block" type="search" placeholder="搜尋作品名稱、藝術家名稱"
+      <form class="d-flex ms-auto px-lg-12 py-lg-8 ">
+        <input class="header__search form-control me-2 d-none d-lg-block me-6" type="search" placeholder="搜尋作品名稱、藝術家名稱"
           aria-label="Search">
-        <a class="fs-0 text-decoration-none" href="#">
-          <i class="fas fa-search fs-6 fs-lg-4"></i>
-        </a>
+        <button class="btn d-none d-lg-block" type="button" onclick="location.href='art-filter.html'">
+          <i class="fa-solid fa-magnifying-glass fs-4"></i>
+        </button>
+        <button class="btn box-shadow-none d-lg-none" type="button" id="toggleSearch">
+          <i class="fa-solid fa-magnifying-glass fs-6"></i>
+        </button>
       </form>
 
-      <button class="navbar-toggler border-0 py-0 fs-0" type="button" data-bs-toggle="collapse"
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">
-        </span>
+        <i class="fa-solid fa-bars fs-6 d-none"></i>
+        <i class="fa-solid fa-xmark fs-5"></i>
       </button>
 
-
-      <div class="collapse navbar-collapse justify-content-lg-end flex-lg-grow-0" id="navbarSupportedContent">
-        <ul class="navbar-nav  mb-2 mb-lg-0">
-          <li class="nav-item border-bottom  border-primary border-lg-gray-f0 text-center">
-            <a class="nav-link fs-6 fw-bold text-nowrap py-6 px-lg-12 py-lg-10" href="#">探索</a>
+      <div class="collapse navbar-collapse flex-grow-0 " id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center mb-2 mb-lg-0 ">
+          <li class="header__menu__item nav-item">
+            <a class="nav-link py-6 px-lg-12 py-lg-10" href="discover.html">探索</a>
           </li>
-          <li class="nav-item border-start border-gray-f0 border-lg-primary text-center">
-            <a class="nav-link fs-6 fw-bold text-nowrap py-6 px-lg-12 py-lg-10" href="market.html">市值</a>
+          <li class="header__menu__item nav-item">
+            <a class="nav-link py-6 px-lg-12 py-lg-10" href="market.html">市值</a>
           </li>
-          <li class="nav-item border-start border-gray-f0 border-lg-primary text-center mb-6 mb-lg-0">
-            <button class="header__btn nav-link ps-lg-12 py-lg-10 fs-0 d-none d-lg-block border-0"
-              data-bs-toggle="modal" data-bs-target="#connect-wallet" type="button">
-              <i class="fas fa-wallet  fs-4"></i>
-            </button>
-            <button type="button" class="btn btn-danger py-3 fs-6 border-primary text-white w-100 d-lg-none"
-              data-bs-toggle="modal" data-bs-target="#connect-wallet">
-              連結錢包
-            </button>
+          <li class="header__menu__wallet nav-item align-self-stretch align-self-lg-center">
+            <a class="nav-link pe-0 py-lg-10 d-none d-lg-block" href="#" data-bs-toggle="modal"
+              data-bs-target="#connect-wallet">
+              <i class="fa-solid fa-wallet fs-lg-4 ps-12 "></i>
+            </a>
+            <a class="d-lg-none d-block btn" href="#" style="margin-top: -1px;" data-bs-toggle="modal"
+              data-bs-target="#connect-wallet">連結錢包</a>
           </li>
         </ul>
-
       </div>
+
+      <!-- 隱藏的 search bar ,在手機版點擊才會出現 -->
+      <form class="header__search__bar d-none d-flex justify-content-between align-items-center" id="headerSearchBar">
+        <button class="btn " type="button" id="searchBack">
+          <i class="fa-solid fa-angle-left fs-6"></i>
+        </button>
+
+        <input class="header__search form-control me-2 " type="search" placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+
+        <button class="btn" type="buton" id="searchBtn">
+          <i class="fa-solid fa-magnifying-glass fs-6"></i>
+        </button>
+      </form>
+
     </div>
+    <!-- modal -->
     <div class="modal fade" id="connect-wallet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <!-- Vertically centered scrollable modal -->
@@ -142,7 +153,6 @@
         </div>
       </div>
     </div>
-
   </nav>
 
   <main>
